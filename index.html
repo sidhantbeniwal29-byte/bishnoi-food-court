@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bishnoi Food Court — Demo</title>
+  <style>
+    :root{--accent:#f7a400;--muted:#f6f0e6;--text:#2b2b2b;--card:#fff}
+    *{box-sizing:border-box}
+    body{font-family:Inter, Roboto, Arial, sans-serif;margin:0;color:var(--text);background:linear-gradient(180deg,#fff3e0 0%, #fff 100%)}
+    header{background:var(--muted);padding:26px 20px 18px;border-bottom:4px solid rgba(0,0,0,0.04)}
+    .wrap{max-width:1200px;margin:0 auto}
+    .brand{display:flex;gap:18px;align-items:center}
+    .logo{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffdc9a);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:20px}
+    h1{margin:0;font-size:28px}
+    .sub{color:#6d6d6d;margin-top:6px}
+    nav{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    nav a{background:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--text);box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+
+    /* Hero */
+    .hero{padding:26px 20px 36px}
+    .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:26px;align-items:start}
+    .hero-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .hero-card p{margin:0;color:#444}
+    .big-img{width:100%;height:260px;border-radius:8px;object-fit:cover;background:#eee}
+
+    /* Menu columns */
+    .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .menu .col{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    .col h3{margin-top:0;border-bottom:1px dashed #eee;padding-bottom:8px}
+    .item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.02)}
+    .item:last-child{border-bottom:0}
+    .price{color:#333}
+
+    /* CTA */
+    .cta{display:flex;gap:12px;align-items:center;margin-top:18px}
+    .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none}
+    .mutebtn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text)}
+
+    footer{margin-top:28px;padding:24px 20px;background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent)}
+    .contact{display:flex;gap:18px;align-items:center}
+
+    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}.menu{grid-template-columns:1fr}.big-img{height:220px}}
+    @media (max-width:560px){header{padding:16px}.logo{width:64px;height:64px}.big-img{height:180px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">BFC</div>
+        <div>
+          <h1>Bishnoi Food Court</h1>
+          <div class="sub">Open 24×7 • Zomato & Swiggy available</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#order">Order Online</a>
+        <a href="#contact">Contact</a>
+        <a href="#location">Location</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <!-- Replace src with your actual food image path -->
+          <img alt="Bishnoi Food Court - Dish" class="big-img" src="/mnt/data/Yellow And Brown Modern Illustrative Indian Restaurant Menu _20251015_132016_0000.jpg">
+          <h2 style="margin-top:12px">Welcome to Bishnoi Food Court</h2>
+          <p style="margin-top:8px">Tasty food, quick service and a cozy dine-in experience. Explore our menu below. We can create WhatsApp menu links and online ordering pages for your restaurant.</p>
+          <div class="cta">
+            <a class="btn" href="#order">Order on WhatsApp</a>
+            <a class="mutebtn" href="#contact">Request Menu Page</a>
+          </div>
+        </div>
+
+        <aside>
+          <div class="hero-card">
+            <h3>Contact & Hours</h3>
+            <p>📞 <strong>+91 8529928029</strong></p>
+            <p>📍 Bishnoi — Local food court</p>
+            <p style="margin-top:8px;color:#666;">We deliver via Zomato & Swiggy. For custom online menus, message us and we will set up a page within 24 hours.</p>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Quick menu preview -->
+      <div class="menu" id="menu">
+        <div class="col">
+          <h3>Maggi</h3>
+          <div class="item"><div>Plain Maggi</div><div class="price">₹149</div></div>
+          <div class="item"><div>Vegetable Maggi</div><div class="price">₹208</div></div>
+          <div class="item"><div>Cheese Maggi</div><div class="price">₹208</div></div>
+          <div class="item"><div>Special Maggi</div><div class="price">₹298</div></div>
+
+          <h3 style="margin-top:14px">Burger</h3>
+          <div class="item"><div>Aalu Tikki Burger</div><div class="price">₹118</div></div>
+          <div class="item"><div>Double Tikki Burger</div><div class="price">₹148</div></div>
+          <div class="item"><div>Paneer Burger</div><div class="price">₹207</div></div>
+        </div>
+
+        <div class="col">
+          <h3>Pizzas</h3>
+          <div class="item"><div>Margherita (8")</div><div class="price">₹249</div></div>
+          <div class="item"><div>Veg Paradise (8")</div><div class="price">₹279</div></div>
+          <div class="item"><div>Cheese-Paneer (8")</div><div class="price">₹299</div></div>
+          <div class="item"><div>Bishnoi Spl Pizza (8")</div><div class="price">₹379</div></div>
+
+          <h3 style="margin-top:14px">Pastas</h3>
+          <div class="item"><div>Red Sauce Pasta</div><div class="price">₹249</div></div>
+          <div class="item"><div>White Sauce Pasta</div><div class="price">₹249</div></div>
+        </div>
+
+        <div class="col">
+          <h3>Combos & Sides</h3>
+          <div class="item"><div>Fries (large)</div><div class="price">₹99</div></div>
+          <div class="item"><div>Garlic Bread</div><div class="price">₹129</div></div>
+          <div class="item"><div>Cold Coffee</div><div class="price">₹89</div></div>
+
+          <h3 style="margin-top:14px">Specials</h3>
+          <div class="item"><div>Makhani Maggi</div><div class="price">₹208</div></div>
+          <div class="item"><div>Tandoori Pizza (8")</div><div class="price">₹329</div></div>
+        </div>
+      </div>
+
+      <section id="order" style="margin-top:18px">
+        <div class="hero-card">
+          <h3>Quick Order</h3>
+          <p>You can use this demo as a WhatsApp menu link page. Click below to copy a pre-filled message to WhatsApp (replace demo number with yours).</p>
+          <p style="margin:12px 0"><a class="btn" href="https://wa.me/918529928029?text=Hi%20Bishnoi%20Food%20Court%20-%20I'd%20like%20to%20place%20an%20order">Order on WhatsApp: +91 8529928029</a></p>
+        </div>
+      </section>
+
+    </section>
+
+    <footer id="contact">
+      <div class="wrap">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+          <div>
+            <strong>Bishnoi Food Court</strong>
+            <p style="margin:6px 0;color:#666">Phone: +91 8529928029 • Zomato & Swiggy</p>
+          </div>
+          <div class="contact">
+            <a class="mutebtn" href="#location">View on Map</a>
+            <a class="mutebtn" href="mailto:bishnoi@example.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
