@@ -6,6 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+/* Floating buttons style */
+.floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:999;
+}
+.floating a {
+  text-decoration:none;
+  padding:14px;
+  color:#fff;
+  font-weight:bold;
+  border-radius:50px;
+  display:inline-block;
+}
+.call { background: #28a745; }
+.wa   { background: #25D366; }
+
+/* Order button style */
+.order-btn {
+  display:block;
+  width:100%;
+  padding:12px;
+  background:#25D366;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  margin-top:10px;
+}
+</style>
+
     body{
       margin:0;
       font-family: Arial, sans-serif;
@@ -140,3 +175,4 @@ function orderWhatsApp(){
 
 </body>
 </html>
+
