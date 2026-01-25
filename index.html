@@ -7,91 +7,91 @@
 
 <style>
 body{
- margin:0;
- font-family:Arial, sans-serif;
- background:#f4f4f4;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f4f4;
 }
 header{
- background:#ff9800;
- color:#fff;
- padding:15px;
- text-align:center;
- position:sticky;
- top:0;
- z-index:10;
+  background:#ff9800;
+  color:#fff;
+  padding:12px;
+  text-align:center;
+  position:sticky;
+  top:0;
 }
-header input{
- width:95%;
- padding:8px;
- border:none;
- border-radius:6px;
- margin-top:8px;
+header img{
+  height:50px;
 }
-
 .category{
- background:#eee;
- padding:10px;
- font-weight:bold;
+  background:#eee;
+  padding:10px;
+  font-weight:bold;
 }
 .item{
- background:#fff;
- margin:10px;
- padding:10px;
- border-radius:8px;
- display:flex;
- gap:10px;
+  background:#fff;
+  margin:10px;
+  padding:10px;
+  border-radius:8px;
 }
-.item img{
- width:80px;
- height:80px;
- border-radius:8px;
-}
-.item-name{
- font-weight:bold;
-}
-.item-price{
- color:#555;
- font-size:14px;
-}
+.item-name{font-weight:bold;}
+.item-price{color:#555;}
 .qty{
- display:flex;
- align-items:center;
- gap:10px;
- margin-top:5px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top:5px;
 }
 .qty button{
- width:28px;
- height:28px;
- border:none;
- border-radius:50%;
- background:#ff9800;
- color:#fff;
- font-size:18px;
+  width:28px;
+  height:28px;
+  border:none;
+  border-radius:50%;
+  background:#ff9800;
+  color:#fff;
+  font-size:18px;
 }
-
 .cart-bar{
- position:fixed;
- bottom:0;
- left:0;
- right:0;
- background:#25D366;
- color:#fff;
- padding:14px;
- display:flex;
- justify-content:space-between;
- font-size:16px;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#25D366;
+  color:#fff;
+  padding:14px;
+  display:flex;
+  justify-content:space-between;
+  font-size:16px;
 }
-
-.call-btn{
- position:fixed;
- right:20px;
- bottom:90px;
- background:#28a745;
- color:#fff;
- padding:14px;
- border-radius:50%;
- text-decoration:none;
- font-size:20px;
+button.main{
+  width:100%;
+  padding:12px;
+  background:#25D366;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  margin-top:10px;
+}
+input{
+  width:100%;
+  padding:10px;
+  margin:5px 0;
+}
+.icon-bar{
+  position:fixed;
+  right:15px;
+  bottom:80px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.icon-bar a{
+  background:#000;
+  color:#fff;
+  padding:12px;
+  border-radius:50%;
+  text-decoration:none;
+  text-align:center;
 }
 </style>
 </head>
@@ -99,125 +99,123 @@ header input{
 <body>
 
 <header>
- <h2>Bishnoi Food Court</h2>
- <small>24×7 Open • Order on WhatsApp</small>
- <input type="text" placeholder="🔍 Search food..." onkeyup="searchItem(this.value)">
+  <!-- LOGO -->
+  <img src="logo.png" alt="Bishnoi Food Court">
+  <div>Bishnoi Food Court</div>
 </header>
 
-<!-- CUSTOMER DETAILS -->
-<div style="padding:10px">
- <input id="custName" placeholder="Customer Name">
- <input id="tableNo" placeholder="Table No">
-</div>
-
-<!-- PIZZA -->
+<!-- MENU -->
 <div class="category">🍕 Pizza</div>
 
-<div class="item" data-name="Paneer Pizza">
- <img src="https://via.placeholder.com/80">
- <div>
+<div class="item">
   <div class="item-name">Paneer Pizza</div>
   <div class="item-price">₹329</div>
   <div class="qty">
-   <button onclick="changeQty('Paneer Pizza',329,-1)">−</button>
-   <span id="Paneer Pizza">0</span>
-   <button onclick="changeQty('Paneer Pizza',329,1)">+</button>
+    <button onclick="qty('Paneer Pizza',329,-1)">−</button>
+    <span id="Paneer Pizza">0</span>
+    <button onclick="qty('Paneer Pizza',329,1)">+</button>
   </div>
- </div>
 </div>
 
-<div class="item" data-name="Margherita Pizza">
- <img src="https://via.placeholder.com/80">
- <div>
+<div class="item">
   <div class="item-name">Margherita Pizza</div>
   <div class="item-price">₹249</div>
   <div class="qty">
-   <button onclick="changeQty('Margherita Pizza',249,-1)">−</button>
-   <span id="Margherita Pizza">0</span>
-   <button onclick="changeQty('Margherita Pizza',249,1)">+</button>
+    <button onclick="qty('Margherita Pizza',249,-1)">−</button>
+    <span id="Margherita Pizza">0</span>
+    <button onclick="qty('Margherita Pizza',249,1)">+</button>
   </div>
- </div>
 </div>
 
-<!-- BURGER -->
 <div class="category">🍔 Burger</div>
 
-<div class="item" data-name="Cheese Burger">
- <img src="https://via.placeholder.com/80">
- <div>
+<div class="item">
   <div class="item-name">Cheese Burger</div>
   <div class="item-price">₹178</div>
   <div class="qty">
-   <button onclick="changeQty('Cheese Burger',178,-1)">−</button>
-   <span id="Cheese Burger">0</span>
-   <button onclick="changeQty('Cheese Burger',178,1)">+</button>
+    <button onclick="qty('Cheese Burger',178,-1)">−</button>
+    <span id="Cheese Burger">0</span>
+    <button onclick="qty('Cheese Burger',178,1)">+</button>
   </div>
- </div>
+</div>
+
+<!-- CHECKOUT -->
+<div style="padding:10px;margin-bottom:120px">
+  <h3>Checkout</h3>
+
+  <input id="custName" placeholder="Customer Name *">
+  <input id="custMobile" placeholder="Mobile Number *">
+
+  <button class="main" onclick="payNow()">💳 Pay Now</button>
+  <button class="main" onclick="confirmOrder()">📦 Confirm Order</button>
 </div>
 
 <!-- CART BAR -->
-<div class="cart-bar" onclick="placeOrder()">
- <div>🛒 <span id="count">0</span> items</div>
- <div>₹<span id="total">0</span> | Place Order</div>
+<div class="cart-bar">
+  <div>🛒 <span id="count">0</span> items</div>
+  <div>₹<span id="total">0</span></div>
 </div>
 
-<!-- CALL BUTTON -->
-<a href="tel:+918529928029" class="call-btn">📞</a>
+<!-- ICONS -->
+<div class="icon-bar">
+  <!-- CALL -->
+  <a href="tel:+918529928029">📞</a>
+  <!-- INSTAGRAM -->
+  <a href="https://instagram.com/yourpage" target="_blank">📸</a>
+</div>
 
 <script>
 let cart={},totalQty=0,totalPrice=0;
-let welcomed=false;
 
-function changeQty(item,price,change){
- if(!cart[item]) cart[item]={qty:0,price:price};
- cart[item].qty+=change;
- if(cart[item].qty<0) cart[item].qty=0;
- document.getElementById(item).innerText=cart[item].qty;
- updateCart();
+function qty(item,price,c){
+  if(!cart[item]) cart[item]={q:0,p:price};
+  cart[item].q+=c;
+  if(cart[item].q<0) cart[item].q=0;
+  document.getElementById(item).innerText=cart[item].q;
+  update();
 }
 
-function updateCart(){
- totalQty=0; totalPrice=0;
- for(let i in cart){
-  totalQty+=cart[i].qty;
-  totalPrice+=cart[i].qty*cart[i].price;
- }
- document.getElementById("count").innerText=totalQty;
- document.getElementById("total").innerText=totalPrice;
-}
-
-function placeOrder(){
- if(totalQty===0){alert("Select items first");return;}
- let name=custName.value||"Guest";
- let table=tableNo.value||"N/A";
- let msg="Hello Bishnoi Food Court,%0AName: "+name+
-         "%0ATable: "+table+"%0AOrder:%0A";
- for(let i in cart){
-  if(cart[i].qty>0){
-   msg+=i+" x "+cart[i].qty+"%0A";
+function update(){
+  totalQty=0; totalPrice=0;
+  for(let i in cart){
+    totalQty+=cart[i].q;
+    totalPrice+=cart[i].q*cart[i].p;
   }
- }
- msg+="Total: ₹"+totalPrice;
- window.open("https://wa.me/918529928029?text="+msg,"_blank");
+  document.getElementById("count").innerText=totalQty;
+  document.getElementById("total").innerText=totalPrice;
 }
 
-function searchItem(txt){
- txt=txt.toLowerCase();
- document.querySelectorAll('.item').forEach(i=>{
-  i.style.display=i.dataset.name.toLowerCase().includes(txt)?'flex':'none';
- });
+function payNow(){
+  if(totalQty===0){alert("Select items first");return;}
+  let upi="upi://pay?pa=yourupi@bank&pn=Bishnoi Food Court&am="+totalPrice+"&cu=INR";
+  window.location.href=upi;
 }
 
-// 🔊 AUTO WELCOME VOICE (first tap)
-document.addEventListener("click",()=>{
- if(welcomed) return;
- welcomed=true;
- let v=new SpeechSynthesisUtterance(
-  "Welcome to Bishnoi Food Court. Kripya apna order select karein."
- );
- v.lang="en-IN";
- speechSynthesis.speak(v);
-},{once:true});
+function confirmOrder(){
+  let name=custName.value.trim();
+  let mobile=custMobile.value.trim();
+
+  if(name===""){alert("Enter customer name");return;}
+  if(mobile.length!==10){alert("Enter valid mobile number");return;}
+  if(totalQty===0){alert("Select items first");return;}
+
+  let orderId="BFC-"+Date.now();
+  let msg="🧾 NEW ORDER%0AOrder ID: "+orderId+
+          "%0AName: "+name+
+          "%0AMobile: "+mobile+
+          "%0AItems:%0A";
+
+  for(let i in cart){
+    if(cart[i].q>0){
+      msg+=i+" x "+cart[i].q+"%0A";
+    }
+  }
+
+  msg+="Total: ₹"+totalPrice+
+       "%0APayment: Customer marked PAID";
+
+  window.open("https://wa.me/918529928029?text="+msg,"_blank");
+}
 </script>
 
 </body>
